@@ -13,8 +13,7 @@ public class Character{
 	Image characterExplode;
 	private state state;
 	private final int width, height;
-	//private final int x;
-	private int x; //If player can change x.
+	private final int x;
 	private final int yDwnVelocityInitial;
 	private int yDwnVelocity;
 	private int yDwnIncrement;
@@ -25,14 +24,14 @@ public class Character{
 		character = new ImageIcon(getClass().getResource("burger.png")).getImage();
 		characterExplode = new ImageIcon(getClass().getResource("explode.png")).getImage();
 		state = state.ALIVE;
-		width = 60;
-		height = 80;
+		width = 70;
+		height = 85;
 		x = 160;
 		y = 320;
 		yDwnVelocityInitial = 2;
 		yDwnVelocity = yDwnVelocityInitial;
-		yDwnIncrement = 3;
-		yAccel = -110;
+		yDwnIncrement = 2;
+		yAccel = -90;
 	}
 	
 	public void explode() {
@@ -51,19 +50,13 @@ public class Character{
 	public void move() {
 		y += yDwnVelocity;
 		yDwnVelocity += yDwnIncrement;
+		if(yDwnVelocity < 0) {
+			yDwnVelocity = yDwnVelocityInitial;
+		}
 	}
 	
 	public void accel() {
-		y += yAccel;
-		yDwnVelocity = yDwnVelocityInitial;
-	}
-	
-	public void forward() {
-		this.x += 10;
-	}
-
-	public void back() {
-		this.x -= 10;
+		yDwnVelocity += yAccel;
 	}
 	
 	public void paint (Graphics g) {

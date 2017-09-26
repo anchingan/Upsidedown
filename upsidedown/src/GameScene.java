@@ -26,7 +26,7 @@ public class GameScene extends JPanel{
 	
 	public GameScene(int w, int h)
 	{
-		width = 120000;//w * 100; //100ï¿½ï¿½ï¿½ï¿½
+		width = 120000;//w * 100; //100­¿ªø
 		height = h;
 		propsUp = new ArrayList<Image>();		
 		propsDown = new ArrayList<Image>();
@@ -37,7 +37,7 @@ public class GameScene extends JPanel{
 		this.setSize(width, height);
 		this.setLayout(null);
 		this.setBackground(new Color(214, 214, 194));
-		setTree();
+		//setTree();
 		setHouse();
 		
 	}
@@ -126,32 +126,38 @@ public class GameScene extends JPanel{
 	
 	private void loadImage() {
 		
-		cloudDown = new ImageIcon(getClass().getResource("cloud.png")).getImage();
-		cloudUp = new ImageIcon(getClass().getResource("cloudd.png")).getImage();
+		//cloudDown = new ImageIcon(getClass().getResource("cloud.png ")).getImage();
+		//cloudUp = new ImageIcon(getClass().getResource("cloudd.png ")).getImage();
 		
 		
-		propsUp.add(new ImageIcon(getClass().getResource("cabin.png")).getImage());
-		propsUp.add(new ImageIcon(getClass().getResource("entrance.png")).getImage());
-		propsUp.add(new ImageIcon(getClass().getResource("flats.png")).getImage());
-		propsUp.add(new ImageIcon(getClass().getResource("hospital.png")).getImage());
-		propsUp.add(new ImageIcon(getClass().getResource("house.png")).getImage());
-		propsUp.add(new ImageIcon(getClass().getResource("roof.png")).getImage());
-		propsUpTree.add(new ImageIcon(getClass().getResource("forest.png")).getImage());
-		propsUpTree.add(new ImageIcon(getClass().getResource("tree.png")).getImage());
-		propsUpTree.add(new ImageIcon(getClass().getResource("tree1.png")).getImage());
-		propsUpTree.add(new ImageIcon(getClass().getResource("tree2.png")).getImage());
+//		propsUp.add(new ImageIcon(getClass().getResource("cabin.png ")).getImage());
+//		propsUp.add(new ImageIcon(getClass().getResource("entrance.png ")).getImage());
+//		propsUp.add(new ImageIcon(getClass().getResource("flats.png ")).getImage());
+//		propsUp.add(new ImageIcon(getClass().getResource("hospital.png ")).getImage());
+//		propsUp.add(new ImageIcon(getClass().getResource("house.png ")).getImage());
+//		propsUp.add(new ImageIcon(getClass().getResource("roof.png ")).getImage());
+//		propsUpTree.add(new ImageIcon(getClass().getResource("forest.png ")).getImage());
+//		propsUpTree.add(new ImageIcon(getClass().getResource("tree.png ")).getImage());
+//		propsUpTree.add(new ImageIcon(getClass().getResource("tree1.png ")).getImage());
+//		propsUpTree.add(new ImageIcon(getClass().getResource("tree2.png ")).getImage());
+//		
+//		
+//		propsDown.add(new ImageIcon(getClass().getResource("cabind.png ")).getImage());
+//		propsDown.add(new ImageIcon(getClass().getResource("entranced.png ")).getImage());
+//		propsDown.add(new ImageIcon(getClass().getResource("flatsd.png ")).getImage());
+//		propsDown.add(new ImageIcon(getClass().getResource("hospitald.png ")).getImage());
+//		propsDown.add(new ImageIcon(getClass().getResource("housed.png ")).getImage());
+//		propsDown.add(new ImageIcon(getClass().getResource("roofd.png ")).getImage());
+//		propsDownTree.add(new ImageIcon(getClass().getResource("forestd.png ")).getImage());
+//		propsDownTree.add(new ImageIcon(getClass().getResource("treed.png ")).getImage());
+//		propsDownTree.add(new ImageIcon(getClass().getResource("tree1d.png ")).getImage());
+//		propsDownTree.add(new ImageIcon(getClass().getResource("tree2d.png ")).getImage());
 		
+		propsDown.add(new ImageIcon(getClass().getResource("fries.png ")).getImage());
+		propsUp.add(new ImageIcon(getClass().getResource("fries.png ")).getImage());
+		propsDownTree.add(new ImageIcon(getClass().getResource("fries.png ")).getImage());
+		propsUpTree.add(new ImageIcon(getClass().getResource("fries.png ")).getImage());
 		
-		propsDown.add(new ImageIcon(getClass().getResource("cabind.png")).getImage());
-		propsDown.add(new ImageIcon(getClass().getResource("entranced.png")).getImage());
-		propsDown.add(new ImageIcon(getClass().getResource("flatsd.png")).getImage());
-		propsDown.add(new ImageIcon(getClass().getResource("hospitald.png")).getImage());
-		propsDown.add(new ImageIcon(getClass().getResource("housed.png")).getImage());
-		propsDown.add(new ImageIcon(getClass().getResource("roofd.png")).getImage());
-		propsDownTree.add(new ImageIcon(getClass().getResource("forestd.png")).getImage());
-		propsDownTree.add(new ImageIcon(getClass().getResource("treed.png")).getImage());
-		propsDownTree.add(new ImageIcon(getClass().getResource("tree1d.png")).getImage());
-		propsDownTree.add(new ImageIcon(getClass().getResource("tree2d.png")).getImage());
 	}
 	
 	@Override public void paint(Graphics g) {

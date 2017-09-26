@@ -2,25 +2,88 @@ import java.awt.Graphics;
 import java.awt.Image;
 
 public class Skyscraper {
-	private int sizeX,sizeY;
-	private int x,y;
+	private final int sizeYInitial;
 	private final Image skyScrapper;
+	private int x,y;
+	private int sizeX,sizeY;
+	private Boolean enlargeable;
+	private Boolean baseMove;
+	private int enlargeMax;
+	private int enlargeDir;
 	
 	public Skyscraper(int x, int y,int sizeX, int sizeY, Image img) {
 		
+		baseMove = false;
 		skyScrapper = img;
+		this.enlargeMax = 0;
+		this.enlargeable = false;
 		this.x = x;
 		this.y = y;
 		this.sizeX = sizeX;
 		this.sizeY = sizeY;
+		this.sizeYInitial = sizeY;
+		enlargeDir = 0;
+
 	}
 	
+	public void setBaseMove(Boolean b) {
+		baseMove= b;
+	}
+	
+	public void setEnlargeable(Boolean b) {
+		enlargeable = b;
+	}
+	
+	
+	
+	public Boolean getEnlargeable() {
+		return enlargeable;
+	}
+	
+		
+ 	public void setEnlargeMax(int max) {
+		enlargeMax = max;
+	}
+
+	
+
+ 	public void enlarge() {
+		
+		if(enlargeDir == 0) {
+			 if(sizeY < enlargeMax) {
+				 sizeY ++;
+				 if(baseMove)
+					 y --;
+			 }
+			 else {
+				 enlargeDir = 1;
+			 }
+		}
+		
+		if(enlargeDir == 1) {
+			if(sizeY > sizeYInitial) {
+				sizeY --;
+				if(baseMove)
+					y ++;
+			}				
+			else {
+				enlargeDir = 0;
+			}
+		}
+		
+		
+	}
+	
+ 	
+ 	
 	public void move() {
 		x --;
 	}
 	
-	public void changeSize() {
-		
+	public Boolean outOfScene() {
+		if(x + sizeX < 0)
+			return true;
+		return false;
 	}
 	
 	public void paint(Graphics g) {
